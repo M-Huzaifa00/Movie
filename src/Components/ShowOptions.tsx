@@ -5,7 +5,6 @@ export const ShowOptions = () => {
             display={'flex'} justifyContent={'flex-end'}
             paddingEnd={{ md: 12 }}
         >
-
             <HStack paddingX={{ base: 2 }} >
                 <Tag bgColor={'#E50914'} color={'white'} >
                     Movie
@@ -14,6 +13,8 @@ export const ShowOptions = () => {
                     TV
                 </Tag>
             </HStack>
+
+
         </Box>
     )
 }
