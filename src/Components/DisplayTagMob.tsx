@@ -19,6 +19,7 @@ export const DisplayTagMob = () => {
                     {
                         Genres?.genres.map(({ id, name }) => (
                             <MenuItem
+                                cursor={'pointer'}
                                 icon={<MdAdd/>}
                                 key={id} >
                                 {name}
