@@ -4,12 +4,14 @@ import { useGenre } from './Hooks/useGenre'
 import { useChangeColorStore } from '../Zustand/useChangeColorStore'
 import { TiTick } from 'react-icons/ti'
 import { TagSkeleton } from './TagSkeleton'
+import { useGenreStore } from '../Zustand/useGenresStore'
 
 
 export const DisplayTags = () => {
     const { data: Genres , isLoading } = useGenre();
     const { colorMode } = useColorMode();
-    const { color, bg, setStyles, setId, StateId } = useChangeColorStore();
+    const { isMovie } = useGenreStore();
+    const { setId , StateId , setMovie , setTv } = useChangeColorStore();
     const Netflix = colorMode === 'dark' ? 'red' : 'Netflix';
     const skelyArr = [1,2,3,4,5,6,7,8,9]
     
@@ -21,16 +23,16 @@ export const DisplayTags = () => {
                     <Tag
                         onClick={() => {
                             setId(id);
-                            setStyles();
-
+                            if(isMovie){ setMovie(name)}
+                            else { setTv(name) }
                         }}
-                        bgColor={id === StateId ? bg : undefined}
-                        color={id === StateId ? color : undefined}
+                        bgColor={id === StateId ? '#E50914' : undefined}
+                        color={id === StateId ? 'white' : undefined}
                         cursor={'pointer'}
                         key={id}
-                        colorScheme={Netflix}
+                        colorScheme={StateId===id ? undefined : Netflix}
                         margin={1}
-                        size={{ base: 'sm', md: 'md', lg: 'lg' }} variant='outline' >
+                        size={{ base: 'sm', md: 'md', lg: 'lg' }} variant={StateId===id ? undefined : 'outline'} >
                         <TagLabel
                         >{name}</TagLabel>
                         <TagRightIcon
