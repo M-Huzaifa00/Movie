@@ -1,22 +1,22 @@
-import { Grid } from "@chakra-ui/react"
+import { Grid, GridItem } from "@chakra-ui/react"
+import { NavBar } from "./Components/NavBar"
 
 function App() {
 
   return (
     <>
-    <Grid templateAreas={
-      `'NavBar' 'NavBar'
-      'Genres' 'Dynamic'
-      'Main''Main'
+      <Grid templateAreas={
+        `'NavBar' 'NavBar'
+         'Genres' 'Dynamic'
+         'Main''Main'
       `
-    }
-    templateColumns={{
-      base: '1fr',
-      lg: '250px 1fr'
-    }}
-    >
+      }
+      >
+        <GridItem area={'NavBar'}>
+          <NavBar/>
+        </GridItem>
 
-    </Grid>
+      </Grid>
     </>
   )
 }
