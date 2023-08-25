@@ -16,8 +16,14 @@ const theme = extendTheme({
             700:'#202020',
             800:'#121212',
             900:'#111'
-        }
+        },
+        Netflix:{
+            500: "#E50914",
+          },
+
     },
     config});
 
 export default theme;
+
+
