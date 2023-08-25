@@ -1,4 +1,4 @@
-import { Box, HStack, Text, useColorMode } from "@chakra-ui/react"
+import { Box, HStack, Text } from "@chakra-ui/react"
 import { ColorMode } from "./ColorMode"
 
 export const NavBar = () => {

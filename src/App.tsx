@@ -1,6 +1,7 @@
 import { Grid, GridItem } from "@chakra-ui/react"
 import { NavBar } from "./Components/NavBar"
 import { GenreTag } from "./Components/GenreTag"
+import { ShowOptions } from "./Components/ShowOptions"
 
 function App() {
 
@@ -8,8 +9,8 @@ function App() {
     <>
       <Grid templateAreas={
         `'NavBar' 'NavBar'
-         'Genres' 'Dynamic'
-          'Main''Main'
+         "Genres"  "Genres"
+         'Main'    'Main'
       `
       }
       >
@@ -19,7 +20,6 @@ function App() {
         <GridItem area={'Genres'}>
           <GenreTag/>
         </GridItem>
-
       </Grid>
     </>
   )
