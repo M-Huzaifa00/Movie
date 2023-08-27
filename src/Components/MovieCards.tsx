@@ -9,7 +9,6 @@ interface Props {
 
 export const MovieCards = ({ title, imageSrc, name }: Props) => {
   imageSrc = imageRequest(imageSrc);
-  console.log(imageSrc)
   const isMovie = useGenreStore(s => s.isMovie);
   const genericTitle = isMovie ? title : name;
 

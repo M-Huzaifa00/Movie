@@ -5,9 +5,13 @@ export const imageRequest = (url: string): string => {
   const imageSize = "w200";
   try {
     const imageURL = new URL(`${baseImageUrl}${imageSize}${url}`);
-    return imageURL.href;
+    if (!imageURL.href.includes("w200null")) {
+      return imageURL.href;
+    } else {
+      return placeholder_image;
+    }
   } catch (error) {
     console.error("Error constructing image URL:", error);
-    return placeholder_image;
+    return "";
   }
 };
