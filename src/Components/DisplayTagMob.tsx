@@ -12,7 +12,7 @@ export const DisplayTagMob = () => {
     const { setMovie , setTv , setId , StateId} = useChangeColorStore();
 
     return (
-        <Show below='sm' >
+        <Show below='sm'>
             <Menu>
                 <MenuButton
                 width={'80px'}

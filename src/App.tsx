@@ -1,7 +1,7 @@
 import { Grid, GridItem } from "@chakra-ui/react"
 import { NavBar } from "./Components/NavBar"
 import { GenreTag } from "./Components/GenreTag"
-import { ShowOptions } from "./Components/ShowOptions"
+import { MovieGrid } from "./Components/MovieGrid"
 
 function App() {
 
@@ -19,6 +19,9 @@ function App() {
         </GridItem>
         <GridItem area={'Genres'}>
           <GenreTag/>
+        </GridItem>
+        <GridItem area='Main'>
+          <MovieGrid/>
         </GridItem>
       </Grid>
     </>

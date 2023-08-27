@@ -8,7 +8,7 @@ export const useGenre = () => {
   const genericApiClient = new apiClient<Genre>(endpoint);
   return useQuery<fetchResponse<Genre>, Error>({
     queryKey: ["genres" , endpoint],
-    queryFn: genericApiClient.getAll,
+    queryFn: genericApiClient.getGenres,
     staleTime: 24 * 60 * 60 * 1000,
     keepPreviousData:true,
   });

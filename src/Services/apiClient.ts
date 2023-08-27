@@ -1,5 +1,5 @@
 import axios from "axios";
-import { fetchResponse } from "./Interfaces";
+import { fetchMovieResponse, fetchResponse } from "./Interfaces";
 
 const axiosInstance = axios.create({
   baseURL: "https://api.themoviedb.org/3",
@@ -18,7 +18,14 @@ export class apiClient<T> {
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
-  getAll = () => {
-    return axiosInstance.get<fetchResponse<T>>(this.endpoint).then((resp) => resp.data);
+  getGenres = () => {
+    return axiosInstance
+      .get<fetchResponse<T>>(this.endpoint)
+      .then((resp) => resp.data);
+  };
+  getShows = () => {
+    return axiosInstance
+      .get<fetchMovieResponse<T>>(this.endpoint)
+      .then((resp) => resp.data);
   };
 }

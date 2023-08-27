@@ -16,7 +16,7 @@ export const GenreTag = () => {
                     >Genres</Heading>
                 </Box>
                 <Box width={{ base: '100%' }}
-                    paddingX={{ base: 2, md: 14 }}
+                    paddingX={{ base: 3, md: 14 }}
                     pt={2}
                 >
                     <DisplayTags />
