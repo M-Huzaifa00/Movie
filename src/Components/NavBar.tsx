@@ -1,5 +1,6 @@
 import { Box, HStack, Text } from "@chakra-ui/react"
 import { ColorMode } from "./ColorMode"
+import { SearchBar } from "./SearchBar"
 
 export const NavBar = () => {
     return (
@@ -9,9 +10,11 @@ export const NavBar = () => {
             letterSpacing={{ base: -1, md: 2 }}
             px={{ base: 2, md: 14 }} py={{ base: 1, md: 2 }}>
             <Text fontSize={{ md: '2xl' }}
-            >Film<Box color={'yellow.300'} verticalAlign={'middle'} fontSize={'30'} as="span"
+            >Film<Box color={'#E50914'} verticalAlign={'middle'} fontSize={'30'} as="span"
             >X</Box>
-                Fusion</Text>
+                Fusion
+                </Text>
+                <SearchBar/>
             <ColorMode />
         </HStack>
     )

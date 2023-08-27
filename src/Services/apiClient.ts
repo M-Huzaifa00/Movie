@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import { fetchMovieResponse, fetchResponse } from "./Interfaces";
 
 const axiosInstance = axios.create({
@@ -23,9 +23,9 @@ export class apiClient<T> {
       .get<fetchResponse<T>>(this.endpoint)
       .then((resp) => resp.data);
   };
-  getShows = () => {
+  getShows = (config : AxiosRequestConfig) => {
     return axiosInstance
-      .get<fetchMovieResponse<T>>(this.endpoint)
+      .get<fetchMovieResponse<T>>(this.endpoint , config)
       .then((resp) => resp.data);
   };
 }

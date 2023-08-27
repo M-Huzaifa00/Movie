@@ -38,7 +38,7 @@ export const ShowOptions = () => {
                 mt={{ base: 5, md: 20, lg: 14 }}
                 ms={{ md: 12, lg: 4 }}
                 pe={{ base: 4, md: 0 }}
-                borderBottom={{ md: '1px solid red' }}
+                borderBottom={{ md: '2px solid red' }}
             >
                 {
                     isMovie ? `${MovieName || ''} Movies` : `${TVName || ''} TV Shows`

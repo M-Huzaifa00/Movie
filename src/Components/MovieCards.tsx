@@ -35,7 +35,7 @@ export const MovieCards = ({ title, imageSrc, name }: Props) => {
         left={0}
         width="100%"
         height="100%"
-        backgroundColor="rgba(0, 0, 0, 0.9)"
+        backgroundColor="rgba(204, 0, 0, 0.3)"
         display="flex"
         flexDirection="column"
         justifyContent="center"
@@ -44,18 +44,17 @@ export const MovieCards = ({ title, imageSrc, name }: Props) => {
         color="white"
         padding={1}
         opacity={0}
-        transition="opacity 0.3s, filter 0.3s"
-        _hover={{ opacity: 1, color: 'white', }}
+        _hover={{ opacity: 1 }}
       >
         <Heading fontSize="12px">{genericTitle}</Heading>
         <Button
-          bgColor="#E50914"
+          bgColor="#CC0000"
           fontSize={{ base: '12px', md: '15px' }}
           width="80%"
           height="20px"
           color={'white'}
           mt={1}
-          _hover={{}}
+          _hover={{ bgColor: 'red.400' }}
         >
           View Details
         </Button>
