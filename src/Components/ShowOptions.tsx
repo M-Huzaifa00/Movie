@@ -1,6 +1,7 @@
 import { Box, HStack, Tag, Text } from "@chakra-ui/react"
 import { useGenreStore } from "../Zustand/useGenresStore"
 import { useChangeColorStore } from "../Zustand/useChangeColorStore";
+import '../App.css'
 export const ShowOptions = () => {
     const { onClickMovie, onClickTV, isMovie } = useGenreStore();
     const { MovieName, TVName } = useChangeColorStore()
@@ -39,6 +40,7 @@ export const ShowOptions = () => {
                 ms={{ md: 12, lg: 4 }}
                 pe={{ base: 4, md: 0 }}
                 borderBottom={{ md: '2px solid red' }}
+                fontFamily={'ubuntu'}
             >
                 {
                     isMovie ? `${MovieName || ''} Movies` : `${TVName || ''} TV Shows`

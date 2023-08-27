@@ -1,4 +1,5 @@
 import { Box, Card, Heading, Image, Button } from '@chakra-ui/react';
+import '../App.css'
 import { useGenreStore } from '../Zustand/useGenresStore';
 import { imageRequest } from '../Services/imageRequest';
 interface Props {
@@ -35,7 +36,7 @@ export const MovieCards = ({ title, imageSrc, name }: Props) => {
         left={0}
         width="100%"
         height="100%"
-        backgroundColor="rgba(204, 0, 0, 0.3)"
+        backgroundColor="rgba(204, 0, 0, 0.5)"
         display="flex"
         flexDirection="column"
         justifyContent="center"
@@ -44,9 +45,11 @@ export const MovieCards = ({ title, imageSrc, name }: Props) => {
         color="white"
         padding={1}
         opacity={0}
+        fontFamily={'ubuntu'}
         _hover={{ opacity: 1 }}
       >
-        <Heading fontSize="12px">{genericTitle}</Heading>
+        <Heading fontFamily={'montserrat'}
+          fontSize="12px">{genericTitle}</Heading>
         <Button
           bgColor="#CC0000"
           fontSize={{ base: '12px', md: '15px' }}

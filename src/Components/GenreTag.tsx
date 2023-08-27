@@ -12,6 +12,7 @@ export const GenreTag = () => {
                 >
 
                     <Heading
+                        fontFamily={'ubuntu'}
                         fontSize={{ base: '30px', md: '3xl' }}
                     >Genres</Heading>
                 </Box>

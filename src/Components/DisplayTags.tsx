@@ -21,6 +21,7 @@ export const DisplayTags = () => {
             {
                 Genres?.genres.map(({ id, name }) => (
                     <Tag
+                        fontFamily={'ubuntu'}
                         onClick={() => {
                             setId(id);
                             if (isMovie) { setMovie(name, id) }

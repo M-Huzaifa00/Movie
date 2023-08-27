@@ -16,7 +16,10 @@ export const SearchBar = () => {
                 e.preventDefault()
             }}
         >
-            <InputGroup>
+            <InputGroup
+            fontFamily={'montserrat'}
+            fontWeight={'bold'}
+            >
                 <InputLeftElement children={<BsSearch />} />
                 <Input
                 onChange={()=>{
