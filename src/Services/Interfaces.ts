@@ -5,9 +5,9 @@ export interface Genre{
 
 export interface Movie{
     id:number;
-    backdrop_path:string;
     original_title:string;
     poster_path:string;
+    name:string;
 }
 
 export interface fetchResponse<T>{

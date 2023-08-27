@@ -2,14 +2,26 @@ import { create } from "zustand";
 
 interface changeEndpoint {
   endpoint: string;
-  isMovie:boolean;
+  MovieOrTvEndpoint: string;
+  isMovie: boolean;
   onClickMovie: () => void;
   onClickTV: () => void;
 }
 
 export const useGenreStore = create<changeEndpoint>((set) => ({
   endpoint: "/genre/movie/list",
-  isMovie:true,
-  onClickMovie: () => set({ endpoint: "/genre/movie/list" , isMovie:true }),
-  onClickTV: () => set({ endpoint: "/genre/tv/list" , isMovie:false}),
+  MovieOrTvEndpoint: "/discover/movie",
+  isMovie: true,
+  onClickMovie: () =>
+    set({
+      endpoint: "/genre/movie/list",
+      MovieOrTvEndpoint: "/discover/movie",
+      isMovie: true,
+    }),
+  onClickTV: () =>
+    set({
+      endpoint: "/genre/tv/list",
+      MovieOrTvEndpoint: "/discover/tv",
+      isMovie: false,
+    }),
 }));

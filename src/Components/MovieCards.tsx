@@ -1,13 +1,17 @@
 import { Box, Card, Heading, Image, Button } from '@chakra-ui/react';
+import { useGenreStore } from '../Zustand/useGenresStore';
+import { imageRequest } from '../Services/imageRequest';
 interface Props {
-  title: string;
+  title?: string;
+  name?: string;
   imageSrc: string;
 }
 
-export const MovieCards = ({ title, imageSrc }: Props) => {
-  const baseImageUrl = "https://image.tmdb.org/t/p/";
-  const imageSize = "w200";
-  const imageURL = `${baseImageUrl}${imageSize}${imageSrc}`;
+export const MovieCards = ({ title, imageSrc, name }: Props) => {
+  imageSrc = imageRequest(imageSrc);
+  console.log(imageSrc)
+  const isMovie = useGenreStore(s => s.isMovie);
+  const genericTitle = isMovie ? title : name;
 
   return (
     <Card
@@ -23,7 +27,7 @@ export const MovieCards = ({ title, imageSrc }: Props) => {
         width={'100%'}
         height={'100%'}
         objectFit={'cover'}
-        src={imageURL}
+        src={imageSrc}
         alt="Movie Poster"
       />
       <Box
@@ -42,9 +46,9 @@ export const MovieCards = ({ title, imageSrc }: Props) => {
         padding={1}
         opacity={0}
         transition="opacity 0.3s, filter 0.3s"
-        _hover={{ opacity: 1, color: 'white',  }}
+        _hover={{ opacity: 1, color: 'white', }}
       >
-        <Heading fontSize="12px">{title}</Heading>
+        <Heading fontSize="12px">{genericTitle}</Heading>
         <Button
           bgColor="#E50914"
           fontSize={{ base: '12px', md: '15px' }}
