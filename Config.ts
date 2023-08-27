@@ -1,0 +1,6 @@
+export const Config = {
+    API_KEY: '25f8ae3813226cde8027bf01e27d6045',
+    AUTH_TOKEN:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNWY4YWUzODEzMjI2Y2RlODAyN2JmMDFlMjdkNjA0NSIsInN1YiI6IjY0ZTc5NTc1ZjJjZjI1MDBhZGYyZDJkYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.crZ025TpqFxbiZlHCfmAmRAWMhQ-4XvsbHB9aUA7xKo",
+  };
+  
+  

@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <Grid templateAreas={
+      <Grid scrollBehavior={'smooth'} templateAreas={
         `'NavBar' 'NavBar'
          'Genres'  'Genres'
          'Main'    'Main'
