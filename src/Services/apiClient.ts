@@ -2,9 +2,6 @@ import axios, { AxiosRequestConfig } from "axios";
 import { fetchMovieResponse, fetchResponse } from "./Interfaces";
 import { Config } from '../../Config'
 
-
-
-
 const axiosInstance = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   headers: {

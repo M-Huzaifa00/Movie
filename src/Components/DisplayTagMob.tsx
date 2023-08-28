@@ -27,8 +27,8 @@ export const DisplayTagMob = () => {
                             <MenuItem
                                 onClick={()=>{
                                     setId(id)
-                                    if(isMovie){setMovie(name)}
-                                    else{setTv(name)}
+                                    if(isMovie){setMovie(name,id)}
+                                    else{setTv(name,id)}
                                 }}
                                 bgColor={id===StateId ? '#E50914' : undefined}
                                 cursor={'pointer'}
