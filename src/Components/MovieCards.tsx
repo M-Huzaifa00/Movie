@@ -2,13 +2,17 @@ import { Box, Card, Heading, Image, Button } from '@chakra-ui/react';
 import '../App.css'
 import { useGenreStore } from '../Zustand/useGenresStore';
 import { imageRequest } from '../Services/imageRequest';
+import { useMovieDetail } from './Hooks/useMovieDetail';
 interface Props {
   title?: string;
   name?: string;
   imageSrc: string;
+  id: number;
 }
 
-export const MovieCards = ({ title, imageSrc, name }: Props) => {
+export const MovieCards = ({ title, imageSrc, name, id }: Props) => {
+  const { data } = useMovieDetail(615656)
+  console.log(data?.original_title,"here")
   imageSrc = imageRequest(imageSrc);
   const isMovie = useGenreStore(s => s.isMovie);
   const genericTitle = isMovie ? title : name;
@@ -58,6 +62,7 @@ export const MovieCards = ({ title, imageSrc, name }: Props) => {
           color={'white'}
           mt={1}
           _hover={{ bgColor: 'red.400' }}
+          onClick={() => console.log(id)}
         >
           View Details
         </Button>

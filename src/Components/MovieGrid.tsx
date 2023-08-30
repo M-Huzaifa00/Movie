@@ -40,7 +40,7 @@ export const MovieGrid = () => {
           displayNormal &&
           Movies?.pages.map((result) => (
             result.results.map(({ id, poster_path, original_title, name }) => (
-              <MovieCards key={id} title={original_title} name={name} imageSrc={poster_path} />
+              <MovieCards key={id} id={id}  title={original_title} name={name} imageSrc={poster_path} />
             ))
           ))
 
@@ -48,7 +48,7 @@ export const MovieGrid = () => {
         {
           displaySearch &&
           Form?.results.map(({ id, poster_path, original_title, name }) => (
-            <MovieCards key={id} title={original_title} name={name} imageSrc={poster_path} />
+            <MovieCards key={id} id={id} title={original_title} name={name} imageSrc={poster_path} />
           ))
         }
 
