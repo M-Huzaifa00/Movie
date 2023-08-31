@@ -12,7 +12,7 @@ export const TVDetailPage = ({ id }: Props) => {
     const { data } = useTVImages(id);
     return (
         <>
-            <SimpleGrid padding={{ base: 2, md: 4 }} paddingX={{ base: 2, md: 14 }} >
+            <SimpleGrid fontFamily={'ubuntu'} padding={{ base: 2, md: 4 }} paddingX={{ base: 2, md: 14 }} >
                 <GridItem>
                     <Heading
                         color={'#E50914'}
