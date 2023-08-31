@@ -2,7 +2,8 @@ import { Box, Card, Heading, Image, Button } from '@chakra-ui/react';
 import '../App.css'
 import { useGenreStore } from '../Zustand/useGenresStore';
 import { imageRequest } from '../Services/imageRequest';
-import { useMovieDetail } from './Hooks/useMovieDetail';
+import { Link } from 'react-router-dom';
+
 interface Props {
   title?: string;
   name?: string;
@@ -11,8 +12,6 @@ interface Props {
 }
 
 export const MovieCards = ({ title, imageSrc, name, id }: Props) => {
-  const { data } = useMovieDetail(615656)
-  console.log(data?.original_title,"here")
   imageSrc = imageRequest(imageSrc);
   const isMovie = useGenreStore(s => s.isMovie);
   const genericTitle = isMovie ? title : name;
@@ -40,32 +39,37 @@ export const MovieCards = ({ title, imageSrc, name, id }: Props) => {
         left={0}
         width="100%"
         height="100%"
-        backgroundColor="rgba(204, 0, 0, 0.5)"
+        backgroundColor="rgba(204, 0, 0, 0.9)"
         display="flex"
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
         transform="rotateY(180deg)"
-        color="white"
+        color="#F8DE22"
         padding={1}
         opacity={0}
         fontFamily={'ubuntu'}
         _hover={{ opacity: 1 }}
       >
-        <Heading fontFamily={'montserrat'}
-          fontSize="12px">{genericTitle}</Heading>
-        <Button
-          bgColor="#CC0000"
-          fontSize={{ base: '12px', md: '15px' }}
-          width="80%"
-          height="20px"
+        <Heading
           color={'white'}
-          mt={1}
-          _hover={{ bgColor: 'red.400' }}
-          onClick={() => console.log(id)}
-        >
-          View Details
-        </Button>
+          fontFamily={'montserrat'}
+          fontWeight={'bolder'}
+          fontSize="md">{genericTitle}</Heading>
+        <Link to={`/details/${id}`} >
+          <Button
+            fontFamily={'montserrat'}
+            size={'xs'}
+            color={'white'}
+            colorScheme={'whiteAlpha'}
+            mt={1}
+            borderRadius={'8px'}
+            _hover={{}}
+            onClick={() => console.log(id)}
+          >
+            View Details
+          </Button>
+        </Link>
       </Box>
     </Card>
   );

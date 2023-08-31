@@ -32,6 +32,15 @@ export interface movieDetail {
   overview: string;
   production_companies: Genre[];
   production_countries: Production_countries[];
-  release_date: Date;
+  release_date: string;
   status: string;
+}
+
+interface key{
+  key:string;
+  type:string;
+  name:string;
+}
+export interface MovieVideo{
+  results:key[];
 }

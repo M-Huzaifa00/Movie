@@ -31,4 +31,9 @@ export class apiClient<T> {
   getMovieDetail = (id: number) => {
     return axiosInstance.get<T>(this.endpoint + id).then((resp) => resp.data);
   };
+  getMovieVideoKey = (id: number) => {
+    return axiosInstance
+      .get<T>(this.endpoint + id + "/videos")
+      .then((resp) => resp.data);
+  };
 }

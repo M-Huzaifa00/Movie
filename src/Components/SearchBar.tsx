@@ -3,9 +3,11 @@ import { BsSearch } from 'react-icons/bs'
 import { useRef } from 'react'
 import { useFormStore } from '../Zustand/useFormStore'
 import { useGenreStore } from "../Zustand/useGenresStore"
+import { useNavigate } from 'react-router-dom'
 
 
 export const SearchBar = () => {
+    const navigate = useNavigate()
     const ref = useRef<HTMLInputElement>(null)
     const { setData , setBack } = useFormStore();
     const isMovie = useGenreStore(s => s.isMovie)
@@ -14,6 +16,7 @@ export const SearchBar = () => {
         <form style={{ width: '100%' }}
             onSubmit={(e) => {
                 e.preventDefault()
+                navigate('/')
             }}
         >
             <InputGroup
