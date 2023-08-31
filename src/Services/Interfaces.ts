@@ -36,11 +36,29 @@ export interface movieDetail {
   status: string;
 }
 
-interface key{
-  key:string;
-  type:string;
-  name:string;
+interface key {
+  key: string;
+  type: string;
+  name: string;
 }
-export interface MovieVideo{
-  results:key[];
+export interface MovieVideo {
+  results: key[];
+}
+
+interface backdrop {
+  file_path: string;
+}
+export interface Images {
+  backdrops: backdrop[];
+}
+
+export interface TVDetails {
+  first_air_date: string;
+  genres: Genre[];
+  number_of_episodes: number;
+  number_of_seasons: number;
+  original_name: string;
+  overview: string;
+  status: string;
+  production_companies: Genre[];
 }

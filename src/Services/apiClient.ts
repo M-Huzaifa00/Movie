@@ -36,4 +36,17 @@ export class apiClient<T> {
       .get<T>(this.endpoint + id + "/videos")
       .then((resp) => resp.data);
   };
+  getMovieImages = (id: number) => {
+    return axiosInstance
+      .get<T>(this.endpoint + id + "/images")
+      .then((resp) => resp.data);
+  };
+  getTVDetails = (id: number) => {
+    return axiosInstance.get<T>(this.endpoint + id).then((resp) => resp.data);
+  };
+  getTVImages = (id: number) => {
+    return axiosInstance
+      .get<T>(this.endpoint + id + "/images")
+      .then((resp) => resp.data);
+  };
 }

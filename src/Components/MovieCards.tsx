@@ -15,7 +15,6 @@ export const MovieCards = ({ title, imageSrc, name, id }: Props) => {
   imageSrc = imageRequest(imageSrc);
   const isMovie = useGenreStore(s => s.isMovie);
   const genericTitle = isMovie ? title : name;
-
   return (
     <Card
       width={{ base: '100px', md: '160px', lg: '130px' }}
